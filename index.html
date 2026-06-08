@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0c0f14" />
+<meta name="description" content="Pelacak laju & peluruhan views untuk penulis serial." />
+<title>VDM — Velocity Decay Monitor</title>
+
+<!-- PWA (relative paths so it works under github.io/<repo>/) -->
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="VDM" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Hanken+Grotesk:wght@400;500;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="app.css" />
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="mark">V<em>D</em>M</div>
+      <div class="sub">Velocity Decay Monitor — pelacak laju &amp; peluruhan</div>
+    </div>
+    <div class="hdr-actions">
+      <button class="icon-btn" id="undoBtn" hidden>↶ Urungkan</button>
+      <button class="icon-btn accent" id="installBtn" hidden>Pasang</button>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="dash">Dashboard</button>
+    <button class="tab" data-tab="chapters">Bab</button>
+    <button class="tab" data-tab="watch">Watchlist</button>
+    <button class="tab" data-tab="beta">Beta</button>
+    <button class="tab" data-tab="schedule">Jadwal</button>
+    <button class="tab" data-tab="settings">Pengaturan</button>
+  </nav>
+
+  <main id="view"><!-- rendered by app.js --></main>
+
+  <p class="note">
+    VDM web edition · port mesin v3.3 “Phoenix”. <br>
+    Data tersimpan offline di perangkat ini. <b>Tanpa</b> logika trigger-peringkat.
+  </p>
+</div>
+
+<input type="file" id="fileInput" accept="application/json,.json" hidden />
+<div class="toast" id="toast"></div>
+
+<script src="app.js" defer></script>
+</body>
+</html>
